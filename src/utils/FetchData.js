@@ -118,7 +118,7 @@ export const Delete_user = async ({ userid }) => {
       { userid },
       {}
     );
-    localStorage.setItem("jwt_token", response.data.token);
+    localStorage.getItem("jwt_token");
     toast.success(response.data.msg);
     return response;
   } catch (error) {
@@ -129,11 +129,12 @@ export const Delete_user = async ({ userid }) => {
 
 export const Update_user = async ({ userId, ...formData }) => {
   try {
+    console.log("Before ", )
     let response = await baseUrl.post(
       "/user/update-user",
       { userId, ...formData }
     );
-    localStorage.setItem("jwt_token", response.data.token);
+    localStorage.getItem("jwt_token");
     toast.success(response.data.msg);
     return response;
   } catch (error) {

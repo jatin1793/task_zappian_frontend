@@ -25,7 +25,7 @@ const User = () => {
     setloading(true)
     const res = await Delete_user({ userid: id })
     setIsDelOpen(false);
-    await navigate('/dashboard')
+    await navigate(`/dashboard`)
     if (res) setloading(false)
   }
 
