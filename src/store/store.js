@@ -13,6 +13,22 @@
 // export const store = configureStore({
 //   reducer: persistedReducer,
 // });
+// const { configureStore } = require('@reduxjs/toolkit');
+// const { persistReducer } = require('redux-persist');
+// const storage = require('redux-persist/lib/storage').default;
+// const authReducer = require('./reducers/authSlice.js');
+
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// };
+
+// const persistedReducer = persistReducer(persistConfig, authReducer);
+
+// exports.store = configureStore({
+//   reducer: persistedReducer,
+// });
+
 const { configureStore } = require('@reduxjs/toolkit');
 const { persistReducer } = require('redux-persist');
 const storage = require('redux-persist/lib/storage').default;
@@ -25,7 +41,8 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, authReducer);
 
-exports.store = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
 });
 
+module.exports = { store };
