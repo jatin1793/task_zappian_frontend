@@ -25,7 +25,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['redux-persist', 'redux-persist/lib/storage']
+      external: ['redux-persist', 'redux-persist/lib/storage','lucide-react']
     }
   }
 });
