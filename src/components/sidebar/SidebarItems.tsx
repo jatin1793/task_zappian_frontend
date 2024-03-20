@@ -4,8 +4,9 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useContext, createContext, useState } from "react"
 import { logout } from '../../store/reducers/authSlice'
 import { LogOut } from '../../utils/FetchData'
-import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react"
+import { MdArrowBackIosNew } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const SidebarContext = createContext();
 
@@ -51,7 +52,7 @@ export default function Sidebar({ children }) {
             onClick={() => setExpanded((curr) => !curr)}
             className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
           >
-            {expanded ? <ChevronFirst /> : <ChevronLast />}
+            {expanded ? <MdArrowBackIosNew /> : <MdArrowForwardIos />}
           </button>
         </div>
 
